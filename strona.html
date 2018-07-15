@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<script language="javascript">
+		function ScaleSize()
+		{	
+			var multipler = 1554/2527;
+			var width = document.body.clientWidth*0.25;
+			var height = auto;
+			document.getElementById("imgTag").style.width = width;
+			console.log(document.body.clientWidth)
+			console.log(document.body.clientHeight)
+			document.getElementById("imgTag").style.height = height;
+		}
+	</script>
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+
+		div {
+			height: 100%; 
+			background-image: url("./tlo-01.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		@font-face {
+			font-family: myFont;
+			src: url("Aadhunik.ttf");
+			font-weight: bold;
+		}
+		.countDownDate {
+			font-size: 60;
+			margin-top: 0px;
+			color: RGB(0,255,168);
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: myFont;
+		}
+		.img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 2%;
+			max-width: 30%;
+			height: auto;
+		}
+		.hyperlink {
+			color: RGB(0,255,168);
+			font-family: myFont;
+			font-size: 18;
+			text-decoration: none;
+		}
+		.title {
+			font-size: 20;
+			margin-top: 3%;
+			color: RGB(0,255,168);
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: myFont;
+			margin-bottom: 0px;
+		}
+		
+		
+	</style>
+</head>
+
+<body onload="javascript:ScaleSize();" onresize="history.go(0)">
+	<div>
+		<img src="./logo.png" id="imgTag"  class="img"/>
+		<p align="center" class="title">Do hackathonu pozostalo:</p>
+		<p id="demo" align="center" class="countDownDate" ></p>
+		<p align="center">
+		<a href="http://www.bait.best.krakow.pl/2017/#/main" class="hyperlink">&lt;poprzednia edycja&gt;</a>
+		</p>
+
+		<script>
+			var countDownDate = new Date("Jan 12, 2019 12:00:00").getTime();
+
+			var x = setInterval(function() {
+
+				var now = new Date().getTime();
+
+				var distance = countDownDate - now;
+
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+					+ minutes + "m " + seconds + "s ";
+
+				if (distance < 0) {
+						clearInterval(x);
+						document.getElementById("demo").innerHTML = "Już się zaczęło!";
+					}
+				}, 1000);
+		</script>
+	</div>
+</body>
+
+</html>
