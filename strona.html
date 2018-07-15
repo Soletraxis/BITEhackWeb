@@ -6,22 +6,19 @@
 	<script language="javascript">
 		function ScaleSize()
 		{
-			var multipler = 1554/2527;
 			var width = document.body.clientWidth*0.25;
 			var height = auto;
 			document.getElementById("imgTag").style.width = width;
-			console.log(document.body.clientWidth)
-			console.log(document.body.clientHeight)
 			document.getElementById("imgTag").style.height = height;
 		}
 	</script>
 	<style>
-		body, html {
+		body {
 			height: 100%;
 			margin: 0;
 		}
 
-		div {
+		html {
 			background-image: url("./tlo-01.jpg");
 			background-position: center center;
 			-webkit-background-size: cover;
